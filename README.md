@@ -16,20 +16,20 @@ Nous avons conservé la configuration par défaut fournie avec la commande Rasa 
 Après avoir défini les adresses IP de chaque composant, le chatbot doit être lancé par \textbf{rasa shell}, ce qui place celui-ci en attente du discours provenant de l'utilisateur à l'aide du chorégraphe qui orchestre la scène.
 ## Entrainement Model
 Apres la definition des données d'entrainement du bot, l'entrainement de ce dernier est lancé avec la commande rasa train ce qui permet d'entrainer le nlu model et le core model.
-![alt text](https://github.com/anashaddad123/Ceri_project/blob/main/images/nlu_model_train.png?raw=true)
-![alt text](https://github.com/anashaddad123/Ceri_project/blob/main/images/core_model_train.png?raw=true)
+![alt text](https://github.com/anashaddad123/Chat_bot/blob/main/images/nlu_model_train.png?raw=true)
+![alt text](https://github.com/anashaddad123/Chat_bot/blob/main/images/core_model_train.png?raw=true)
 
 Apres le bot est entrainer, on lance l'apprentissage interactive en utilisant la commande rasa x ce qui ouvre une page web qui permet d'interagir avec le bot en temps réel tout en lui corrigant les actions au cas ou il se trompe.
 il faut lancer le script actions/actions.py avant de commencer une conversation avec le chatbot ce qui permet d'initiliaser le serveur dédié a l'execution des differents actions définies.
-![alt text](https://github.com/anashaddad123/Ceri_project/blob/main/images/run_action_server.png?raw=true)
+![alt text](https://github.com/anashaddad123/Chat_bot/blob/main/images/run_action_server.png?raw=true)
 ### exemples usage 
 Notre modèle a réussi à tenir une conversation correcte après le renforcement de ce dernier grâce à RasaX, il est maintenant capable de récupérer auprès de l'utilisateur sa section et son groupe afin de lui fournir sa prochaine session ainsi que de lui rappeler la date du prochain examen afin de bien se préparer.
-![alt text](https://github.com/anashaddad123/Ceri_project/blob/main/images/interactif_learning_rasax_1.png?raw=true)
+![alt text](https://github.com/anashaddad123/Chat_bot/blob/main/images/interactif_learning_rasax_1.png?raw=true)
 
 Parmi les services fournis par notre robot, l'utilisateur peut demander une définition de n'importe quel mot en français, et notre robot est capable de fournir cette définition sans avoir besoin de se former sur ce mot en particulier.
-![alt text](https://github.com/anashaddad123/Ceri_project/blob/main/images/interactif_learning_rasax_2.png?raw=true)
+![alt text](https://github.com/anashaddad123/Chat_bot/blob/main/images/interactif_learning_rasax_2.png?raw=true)
 
 
 Et le dernier service dans lequel notre robot est doué est la traduction de toutes les phrases du français vers l'anglais sans aucune condition sur la taille et la grammaire de la phrase.
-![alt text](https://github.com/anashaddad123/Ceri_project/blob/main/images/interactif_learning_rasax_3.png?raw=true)
+![alt text](https://github.com/anashaddad123/Chat_bot/blob/main/images/interactif_learning_rasax_3.png?raw=true)
 
