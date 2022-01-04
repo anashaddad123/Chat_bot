@@ -1,0 +1,236 @@
+#### This file contains tests to evaluate that your bot behaves as expected.
+#### If you want to learn more, please see the docs: https://rasa.com/docs/rasa/testing-your-assistant
+
+stories:
+- story: happy path 1
+  steps:
+  - user: |
+      hello there!
+    intent: greet
+  - action: utter_greet
+  - user: |
+      amazing
+    intent: mood_great
+  - action: utter_happy
+
+- story: happy path 2
+  steps:
+  - user: |
+      hello there!
+    intent: greet
+  - action: utter_greet
+  - user: |
+      amazing
+    intent: mood_great
+  - action: utter_happy
+  - user: |
+      bye-bye!
+    intent: goodbye
+  - action: utter_goodbye
+
+- story: sad path 1
+  steps:
+  - user: |
+      hello
+    intent: greet
+  - action: utter_greet
+  - user: |
+      not good
+    intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - user: |
+      yes
+    intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - user: |
+      hello
+    intent: greet
+  - action: utter_greet
+  - user: |
+      not good
+    intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - user: |
+      not really
+    intent: deny
+  - action: utter_goodbye
+
+- story: sad path 3
+  steps:
+  - user: |
+      hi
+    intent: greet
+  - action: utter_greet
+  - user: |
+      very terrible
+    intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - user: |
+      no
+    intent: deny
+  - action: utter_goodbye
+
+- story: say goodbye
+  steps:
+  - user: |
+      bye-bye!
+    intent: goodbye
+  - action: utter_goodbye
+
+- story: bot challenge
+  steps:
+  - user: |
+      are you a bot?
+    intent: bot_challenge
+  - action: utter_iamabot
+- story: Story from Conversation ID b2b82605ee614ce3b3c2b498c9edaac6
+  steps:
+  - intent: greet
+    user: |-
+      Bonjour
+  - action: utter_greet
+  - intent: ask_schedule
+    user: |-
+      emplois de temps
+  - action: utter_ask_section
+  - intent: give_section
+    user: |-
+      [m1](section)
+  - slot_was_set:
+    - section: m1
+  - action: utter_ask_group
+  - intent: give_group
+    user: |-
+      intelligence [artificielle](group)
+  - slot_was_set:
+    - section: m1
+  - slot_was_set:
+    - group: artificielle
+  - action: action_schedule
+  - action: utter_goodbye
+- story: Story from Conversation ID 2ce78fbef3e14ed5ac77bbbd75c43cb9
+  steps:
+  - intent: greet
+    user: |-
+      bonsoir
+  - action: utter_greet
+  - intent: ask_schedule
+    user: |-
+      j'ai quoi comme cours apres
+  - action: utter_ask_section
+  - intent: give_section
+    user: |-
+      [m1](section)
+  - slot_was_set:
+    - section: m1
+  - action: utter_ask_group
+  - intent: give_group
+    user: |-
+      [logiciel de la societe](group) numerique
+  - slot_was_set:
+    - group: logiciel de la societe
+  - action: action_schedule
+  - action: utter_goodbye
+- story: Story from Conversation ID 46a2fc320e984667b77e4afca3e563cf
+  steps:
+  - slot_was_set:
+    - section: m2
+  - action: utter_ask_group
+  - intent: give_group
+    user: |-
+      [ingénieur systemes informatiques communicants](group)
+  - slot_was_set:
+    - group: ingénieur systemes informatiques communicants
+  - action: action_schedule
+  - action: utter_goodbye
+- story: Story from Conversation ID 46a2fc320e984667b77e4afca3e563cf
+  steps:
+  - slot_was_set:
+    - section: m2
+  - action: utter_ask_group
+  - intent: give_group
+    user: |-
+      [informatiques communicants](group)
+  - slot_was_set:
+    - group: ingénieur systemes informatiques communicants
+  - action: action_schedule
+  - action: utter_goodbye
+- story: Story from Conversation ID 46a2fc3
+  steps:
+  - slot_was_set:
+    - section: m2
+  - action: utter_ask_group
+  - intent: give_group
+    user: |-
+      [systemes informatiques communicants](group)
+  - slot_was_set:
+    - group: ingénieur systemes informatiques communicants
+  - action: action_schedule
+  - action: utter_goodbye
+- story: Story from Conversation ID 46a2fc320e9
+  steps:
+  - slot_was_set:
+    - section: m2
+  - action: utter_ask_group
+  - intent: give_group
+    user: |-
+      [systemes informatiques communicants](group)
+  - slot_was_set:
+    - group: ingénieur systemes informatiques communicants
+  - action: action_schedule
+  - action: utter_goodbye
+- story: Story from Conversation ID 46a2fc320
+  steps:
+  - slot_was_set:
+    - section: m2
+  - action: utter_ask_group
+  - intent: give_group
+    user: |-
+      [systemes informatiques communicants](group)
+  - slot_was_set:
+    - group: ingénieur systemes informatiques communicants
+  - action: action_schedule
+  - action: utter_goodbye
+- story: Story from Conversation ID 46a2fc
+  steps:
+  - slot_was_set:
+    - section: m2
+  - action: utter_ask_group
+  - intent: give_group
+    user: |-
+      [systemes informatiques communicants](group)
+  - slot_was_set:
+    - group: ingénieur systemes informatiques communicants
+  - action: action_schedule
+  - action: utter_goodbye
+- story: Story from Conversation ID 89ce526a662846228645485da64343a2
+  steps:
+  - intent: greet
+    user: |-
+      hello
+  - action: utter_greet
+  - intent: ask_schedule
+    user: |-
+      emplois de temps
+  - action: utter_ask_section
+  - intent: give_section
+    user: |-
+      [m1](section)
+  - slot_was_set:
+    - section: m1
+  - action: utter_ask_group
+  - intent: give_group
+    user: |-
+      systemes [informatiques communicants](group)
+  - slot_was_set:
+    - group: informatiques communicants
+  - action: action_schedule
+  - action: utter_goodbye
+
+

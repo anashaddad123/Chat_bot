@@ -1,0 +1,449 @@
+version: "2.0"
+stories:
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+- story: say goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+- story: bot challenge
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+- story: schedule
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_schedule
+  - action: utter_ask_section
+  - intent: give_section
+  - action: utter_ask_group
+  - intent: give_group
+  - action: action_schedule
+  - action: utter_goodbye
+- story: definition
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_definition
+  - action: utter_ask_sentence
+  - intent: give_word
+  - action: action_definition
+  - action: utter_goodbye
+- story: Story from Conversation ID e439e6141c49468f86882ba3916ba634
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_schedule
+  - action: utter_ask_section
+  - intent: give_section
+    entities:
+    - section: m1
+  - slot_was_set:
+    - section: m1
+  - action: utter_ask_group
+  - intent: give_group
+    entities:
+    - grp: IA
+  - slot_was_set:
+    - grp: IA
+  - action: action_schedule
+- story: Story from Conversation ID ddad163e55b74c098aa65872b51168fd
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_schedule
+  - action: utter_ask_section
+  - intent: give_section
+    entities:
+    - section: m2
+  - slot_was_set:
+    - section: m2
+  - action: utter_ask_group
+  - intent: give_group
+    entities:
+    - grp: ilsen
+  - slot_was_set:
+    - grp: ilsen
+  - action: action_schedule
+- story: Story from Conversation ID 005dd6ac1eeb424e90b18e60c5ff3118
+  steps:
+  - slot_was_set:
+    - section: m1
+  - action: utter_ask_group
+  - intent: give_group
+    entities:
+    - grp: sicom
+  - slot_was_set:
+    - grp: sicom
+  - action: action_schedule
+  - slot_was_set:
+    - grp: sicom
+  - intent: goodbye
+  - action: utter_goodbye
+- story: Story from Conversation ID e514e5e657a544148ad042a0999dfc3b
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+  - intent: ask_schedule
+  - action: utter_ask_section
+  - intent: give_section
+    entities:
+    - section: m2
+  - slot_was_set:
+    - section: m2
+  - action: utter_ask_group
+  - intent: give_group
+    entities:
+    - grp: ilsen
+  - slot_was_set:
+    - grp: ilsen
+  - action: action_schedule
+  - intent: goodbye
+  - action: utter_goodbye
+- story: Story from Conversation ID 43e9e0c93f7a4c78861bc61d9e8c4dad
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_schedule
+  - action: utter_ask_section
+  - intent: give_section
+    entities:
+    - section: m1
+  - slot_was_set:
+    - section: m1
+  - action: utter_ask_group
+  - intent: give_group
+    entities:
+    - grp: sicom
+  - slot_was_set:
+    - grp: sicom
+  - action: action_schedule
+  - intent: mood_great
+  - action: utter_happy
+  - intent: goodbye
+  - action: utter_goodbye
+- story: Story from Conversation ID d4a5edab5e35410e9615684d34a1fbba
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_schedule
+  - action: utter_ask_section
+  - intent: give_section
+    entities:
+    - section: m1
+  - slot_was_set:
+    - section: m1
+  - action: utter_ask_group
+  - intent: give_group
+    entities:
+    - grp: ilsen
+  - slot_was_set:
+    - grp: ilsen
+  - action: action_schedule
+  - intent: mood_greatful
+  - action: utter_greatful
+  - intent: ask_definition
+  - action: utter_ask_sentence
+  - intent: give_word
+  - action: action_definition
+  - intent: mood_greatful
+  - action: utter_greatful
+  - intent: goodbye
+  - action: utter_goodbye
+- story: Story from Conversation ID f88b852a4d1b42e58c75382aa40b5926
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_definition
+  - action: utter_ask_sentence
+  - action: name_form
+  - active_loop: name_form
+  - slot_was_set:
+    - requested_slot: word
+  - intent: give_word
+  - action: name_form
+  - slot_was_set:
+    - word: planete
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_definition
+- story: Story from Conversation ID 44d2aebbafa74c2d9ea469c3c34fb1ae
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_definition
+  - action: utter_ask_sentence
+  - action: name_form
+  - active_loop: name_form
+  - slot_was_set:
+    - requested_slot: word
+  - slot_was_set:
+    - word: terre
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_definition
+  - intent: mood_greatful
+  - action: utter_greatful
+  - intent: goodbye
+  - action: utter_goodbye
+- story: Story from Conversation ID 603a7c1565d045dabe2b3a81cab8f27c
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_schedule
+  - action: utter_ask_section
+  - intent: give_section
+    entities:
+    - section: m2
+  - slot_was_set:
+    - section: m2
+  - action: utter_ask_group
+  - intent: give_group
+    entities:
+    - grp: ILSEN
+  - slot_was_set:
+    - grp: ILSEN
+  - action: action_schedule
+  - intent: mood_greatful
+  - action: utter_greatful
+  - intent: ask_definition
+  - action: utter_ask_sentence
+  - slot_was_set:
+    - section: m2
+  - slot_was_set:
+    - grp: ILSEN
+  - action: name_form
+  - active_loop: name_form
+  - slot_was_set:
+    - requested_slot: word
+  - intent: ask_schedule
+  - action: name_form
+  - slot_was_set:
+    - word: pomme
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_definition
+- story: Story from Conversation ID e2309a05163b430880ca667e3b26ecad
+  steps:
+  - slot_was_set:
+    - section: m2
+  - slot_was_set:
+    - grp: ILSEN
+  - action: name_form
+  - active_loop: name_form
+  - slot_was_set:
+    - requested_slot: word
+  - slot_was_set:
+    - word: verre
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_definition
+  - intent: mood_greatful
+  - action: utter_greatful
+  - intent: goodbye
+  - action: utter_goodbye
+- story: Story from Conversation ID 6d56facd8f414be3877e120c1cddbb67
+  steps:
+  - action: utter_ask_translate
+  - action: translate_form
+  - active_loop: translate_form
+  - slot_was_set:
+    - requested_slot: trans
+- story: Story from Conversation ID ebabd13c31264ea1ae52bd5648e091f3
+  steps:
+  - action: utter_ask_translate
+  - action: translate_form
+  - active_loop: translate_form
+  - slot_was_set:
+    - requested_slot: trans
+  - intent: give_trans
+  - action: translate_form
+  - slot_was_set:
+    - trans: la vie est belle
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_translation
+- story: Story from Conversation ID 16d5d4e58b9a4027b010aa241a4dd26a
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_translate
+  - action: utter_ask_translate
+  - action: translate_form
+  - active_loop: translate_form
+  - slot_was_set:
+    - requested_slot: trans
+  - intent: give_trans
+  - action: translate_form
+  - slot_was_set:
+    - trans: la vie est belle
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_translation
+- story: Story from Conversation ID 08ba644580914b2cb24a3ef7627789a5
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_translate
+  - action: utter_ask_translate
+  - action: translate_form
+  - active_loop: translate_form
+  - slot_was_set:
+    - requested_slot: trans
+  - slot_was_set:
+    - trans: malade
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_translation
+  - intent: ask_definition
+  - action: utter_ask_sentence
+  - action: name_form
+  - active_loop: name_form
+  - slot_was_set:
+    - requested_slot: word
+  - intent: mood_unhappy
+  - action: name_form
+  - slot_was_set:
+    - word: malade
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_definition
+- story: Story from Conversation ID cc17a665bf3642c484f45110e49ddaef
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_translate
+  - action: utter_ask_translate
+  - action: translate_form
+  - active_loop: translate_form
+  - slot_was_set:
+    - requested_slot: trans
+  - slot_was_set:
+    - trans: je suis malade
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_translation
+  - intent: ask_definition
+  - action: utter_ask_sentence
+  - action: name_form
+  - active_loop: name_form
+  - slot_was_set:
+    - requested_slot: word
+  - slot_was_set:
+    - word: malade
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_definition
+  - intent: mood_greatful
+  - action: utter_greatful
+- story: Story from Conversation ID b57fd63235e44494a3f51a4380771844
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_schedule
+  - action: utter_ask_section
+  - intent: give_section
+    entities:
+    - section: m1
+  - slot_was_set:
+    - section: m1
+  - action: utter_ask_group
+  - intent: give_group
+    entities:
+    - grp: ilsen
+  - slot_was_set:
+    - grp: ilsen
+  - action: action_schedule
+  - intent: ask_translate
+  - action: utter_ask_translate
+  - action: translate_form
+  - active_loop: translate_form
+  - slot_was_set:
+    - requested_slot: trans
+  - intent: give_word
+  - action: translate_form
+  - slot_was_set:
+    - trans: je suis malade
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_translation
+  - intent: ask_definition
+  - action: utter_ask_sentence
+  - action: name_form
+  - active_loop: name_form
+  - slot_was_set:
+    - requested_slot: word
+  - intent: give_word
+  - action: name_form
+  - slot_was_set:
+    - word: malade
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_definition
+- story: Story from Conversation ID 9c6919644f414b6f8d028d36fea34ea0
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_definition
+  - action: utter_ask_sentence
+  - action: name_form
+  - active_loop: name_form
+  - slot_was_set:
+    - requested_slot: word
+  - slot_was_set:
+    - word: vivant
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_definition
+  - intent: ask_translate
+  - action: utter_ask_translate
+  - action: translate_form
+  - active_loop: translate_form
+  - slot_was_set:
+    - requested_slot: trans
+  - intent: mood_greatful
+  - action: translate_form
+  - slot_was_set:
+    - trans: inerte
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_translation
